@@ -32,3 +32,4 @@ resolvers += Resolver.jcenterRepo
 bintrayOrganization := Some("epam")
 
 bintrayRepository := "reportportal"
+testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest, "-C", "com.epam.reportportal.scalatest.RPReporter", "-s", "com.epam.reportportal.scalatest.service.SmokeTest")

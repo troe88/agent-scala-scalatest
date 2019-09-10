@@ -143,6 +143,7 @@ class ReporterServiceImp(parameters: ListenerParameters, launch: Launch, testCon
 
   def finishTestClass(event: SuiteCompleted): Unit = {
     val rq = new FinishTestItemRQ
+    rq.setStatus("PASSED")
     rq.setEndTime(Calendar.getInstance.getTime)
     getValueOfMap(testContext.rootIdsOfSuites, event.suiteId) match {
       case Some(value) => {
